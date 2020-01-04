@@ -1,5 +1,10 @@
 ---
 layout: default
 ---
-I'm a recipe
+<ul>
+  {% for ingredient in page.ingredients %}
+    <li>{{ ingredient }}</li>
+  {% endfor %}
+</ul>
+
 {{ content }}
