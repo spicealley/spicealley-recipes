@@ -5,6 +5,7 @@ date:   2020-01-04 12:00:00 -0400
 ingredients:
   - 3 Tbsp olive oil
   - whole chicken, cut into pieces
+  - several pinches of salt/pepper
   - 2 large russet potatoes - 1 inch chunks
   - 6 cloves garlic - crushed and whole
   - 2 large carrots - 1 inch chunks
@@ -12,6 +13,9 @@ ingredients:
   - 6 springs thyme
   - 1 pint mushrooms (cremini or button)
   - 2 Tbsp flour
+  - 1 Bay leaf
   - 1 bottle of dry red wine (minus one glass that you drink)
+  - Bunch parsley - to taste for garnish
+  - 1 tbsp red wine vinegar
 ---
 Sear the chicken in a heavy dutch oven in batches small enough to avoid crowding the pan. First skin side down to render the fat, then turning once to finish. You don't need to cook it all the way through, we'll braise it later. Just get a nice brown sear on both sides.
