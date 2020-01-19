@@ -1,0 +1,120 @@
+$font-sizes: (
+  ('%h1', 32.0px, ($sm: 38.4px, $lg: 44.8px)),
+  ('%h2', 28.8px, ($lg: 33.6px)),
+  ('%h3', 25.2px, ()),
+  ('%h6', 22.4px, ())
+);
+
+body {
+  font-family: $copy-font-family;
+  font-size: $font-size;
+  color: $text-color;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+// reset heading styles
+@for $i from 1 to 7 {
+  h#{$i} {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+  }
+
+  .rte {
+    h#{$i} {
+      @extend %h#{$i};
+    }
+
+    li {
+      padding: 12px 0;
+    }
+  }
+}
+
+%copy {
+  font-size: $copy-font-size;
+}
+
+%heading {
+  font-family: $heading-font-family;
+  font-weight: 700;
+}
+
+%caps-heading {
+  @extend %heading;
+
+  text-transform: uppercase;
+}
+
+.page-title {
+  @extend %h1;
+
+  color: $flamingo;
+
+  &.with-margin {
+    @include section-layout($container: false);
+  }
+}
+
+%page-subtitle {
+  @extend %heading;
+
+  font-size: 22.4px;
+  font-weight: 500;
+}
+
+// set heading font styles
+@for $i from 1 to 7 {
+  %h#{$i} {
+    @extend %heading;
+  }
+}
+@each $i in 2, 3, 4, 6 {
+  %h#{$i} {
+    @extend %caps-heading;
+  }
+}
+
+// set responsive font-sizes for headings
+@each $selector, $default, $map in $font-sizes {
+  #{$selector} {
+    @include responsive(font-size, $default, $map);
+  }
+}
+
+%sidebar-list {
+  @extend .list-unstyled;
+
+  .link {
+    @extend %sidebar-link;
+
+    display: block;
+
+    @include responsive(padding, 4px 0, (
+      $md: 8px 0
+    ));
+  }
+}
+
+a {
+  @extend %copy-link;
+}
+
+.list-unstyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.debug {
+  padding: 12px;
+  margin: 12px 0;
+  background-color: #333;
+  color: #ccc;
+}

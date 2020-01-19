@@ -28,7 +28,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: spicealleyshop
 github_username:  spicealley
-
+sass:
+    sass_dir: _sass
+#    style: compressed
 # Build settings
 # theme: minima
 # plugins:

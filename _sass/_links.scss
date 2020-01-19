@@ -1,0 +1,73 @@
+%link {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus, &:hover {
+    text-decoration: underline;
+  }
+}
+
+%menu-link,
+%copy-link,
+%sidebar-link {
+  font-family: $heading-font-family;
+  font-weight: 500;
+}
+
+%menu-link {
+  @extend %link;
+
+  color: $dove-gray;
+  fill: $dove-gray;
+
+  &:focus, &:hover {
+    color: $flamingo;
+    fill: $flamingo;
+  }
+}
+
+%copy-link {
+  @extend %link;
+
+  color: $fun-blue;
+  fill: $fun-blue;
+}
+
+%sidebar-link {
+  @extend %link;
+
+  color: $dove-gray;
+  fill: $dove-gray;
+
+  &:focus, &:hover {
+    color: $sushi;
+    fill: $sushi;
+  }
+}
+
+%minor-link {
+  @extend %link;
+
+  color: inherit;
+  fill: inherit;
+  font-family: inherit;
+
+  &:focus, &:hover {
+    font-weight: 700;
+  }
+}
+
+%unstyled-link {
+  &, &:focus, &:hover {
+    text-decoration: none;
+    color: inherit;
+    fill: inherit;
+    stroke: inherit;
+    font-weight: inherit;
+  }
+}
+
+.button-link {
+  @extend %unstyled-button;
+  @extend %copy-link;
+}

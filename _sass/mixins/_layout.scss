@@ -1,0 +1,56 @@
+@mixin container ($width: $page-width, $gutter: $gutter-width) {
+  width: 100%;
+  max-width: $width;
+  margin: 0 auto;
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+@mixin section-spacing($container: true, $oneline: false) {
+  @if ($container) {
+    @include container;
+  }
+
+  @if ($oneline) {
+    margin-bottom: 24px;
+    margin-top: 24px;
+  } @else {
+    @include responsive(margin-bottom, 24px, (
+      $sm: 36px,
+      $lg: 48px
+    ));
+
+    @include responsive(margin-top, 24px, (
+      $sm: 36px,
+      $lg: 48px
+    ));
+  }
+}
+
+@mixin section-layout ($breakpoint: null, $container: true, $oneline: false) {
+  @if ($breakpoint) {
+    @include screen-up($breakpoint) {
+      @include section-spacing($container, $oneline);
+    }
+  } @else {
+    @include section-spacing($container, $oneline);
+  }
+}
+
+@mixin section-divider ($size: 1px, $width: 100%, $color: $flamingo) {
+  width: $width;
+  border: 0 none;
+  border-bottom: $size solid $color;
+}
+
+%blowout-mobile-image {
+  @include responsive(width, 100vw, (
+    $sm: 100%
+  ));
+
+  @include sm-dn {
+    max-width: none;
+    margin-left: -$gutter-width;
+    margin-right: -$gutter-width;
+  }
+}

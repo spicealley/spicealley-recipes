@@ -1,0 +1,42 @@
+$xs:  420px;
+$ph:  580px;
+$sm:  864px;
+$md: 1024px;
+$lg: 1200px;
+
+@mixin screen-up($width) { @media screen and (min-width: $width) { @content; }}
+@mixin screen-dn($width) { @media screen and (max-width: $width - 1px) { @content; } }
+
+@mixin xs-up { @include screen-up($xs) { @content; } }
+@mixin xs-dn { @include screen-dn($xs) { @content; } }
+@mixin ph-up { @include screen-up($ph) { @content; } }
+@mixin ph-dn { @include screen-dn($ph) { @content; } }
+@mixin sm-up { @include screen-up($sm) { @content; } }
+@mixin sm-dn { @include screen-dn($sm) { @content; } }
+@mixin md-up { @include screen-up($md) { @content; } }
+@mixin md-dn { @include screen-dn($md) { @content; } }
+@mixin lg-up { @include screen-up($lg) { @content; } }
+@mixin lg-dn { @include screen-dn($lg) { @content; } }
+
+// utils to hide at breakpoints
+.hide-xs-up { @include screen-up($xs) { display: none !important; } }
+.hide-xs-dn { @include screen-dn($xs) { display: none !important; } }
+.hide-ph-up { @include screen-up($ph) { display: none !important; } }
+.hide-ph-dn { @include screen-dn($ph) { display: none !important; } }
+.hide-sm-up { @include screen-up($sm) { display: none !important; } }
+.hide-sm-dn { @include screen-dn($sm) { display: none !important; } }
+.hide-md-up { @include screen-up($md) { display: none !important; } }
+.hide-md-dn { @include screen-dn($md) { display: none !important; } }
+.hide-lg-up { @include screen-up($lg) { display: none !important; } }
+.hide-lg-dn { @include screen-dn($lg) { display: none !important; } }
+
+// dynamically set a property at different breakpoints
+@mixin responsive($property, $default, $map) {
+  #{$property}: $default;
+
+  @each $breakpoint, $value in $map {
+    @include screen-up($breakpoint) {
+      #{$property}: $value;
+    }
+  }
+}

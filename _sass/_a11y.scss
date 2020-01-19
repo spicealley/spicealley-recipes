@@ -1,0 +1,32 @@
+$clickable-spacing:  8px;
+$clickable-size:     48px;
+
+%clickable {
+  min-height: $clickable-size;
+  min-width: $clickable-size;
+}
+
+// http: //www.456bereastreet.com/archive/200711/screen_readers_sometimes_ignore_displaynone
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+// https: //developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+.visually-hidden {
+
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+
+  body:hover & {
+    a, input, button {
+      display: none !important;
+    }
+  }
+
+}

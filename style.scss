@@ -1,6 +1,6 @@
 ---
 ---
 
-.testing {
-  font-size: 1.2em
-}
+@import 'variables';
+@import 'mixins/mixins';
+@import 'sass';

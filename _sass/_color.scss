@@ -1,0 +1,22 @@
+$color-list: (
+  ('mine-shaft', $mine-shaft),
+  ('emporer', $emporer),
+  ('dove-gray', $dove-gray),
+  ('gallery', $gallery),
+  ('spring-wood', $spring-wood),
+  ('white', $white),
+  ('flamingo', $flamingo),
+  ('rose-bud', $rose-bud),
+  ('fun-blue', $fun-blue),
+  ('link-water', $link-water),
+  ('sushi', $sushi),
+);
+
+@each $name, $color in $color-list {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+  .text-#{$name} {
+    color: $color;
+  }
+}
