@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "serve": "bundle exec jekyll serve"
+    "serve": "bundle exec jekyll serve",
+    "build": "bundle exec jekyll build -t"
   }
 }
