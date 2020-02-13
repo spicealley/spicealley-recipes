@@ -1,0 +1,93 @@
+.article {
+  &-section {
+    @include section-layout($container: false);
+
+    .index-template & {
+      @include sm-dn {
+        background-color: $spring-wood;
+        margin-bottom: 0;
+        padding: 24px 0;
+      }
+    }
+
+    .divider {
+      @include section-layout($container: false);
+      @include section-divider;
+    }
+
+    &-container {
+      @include container;
+    }
+
+    &-title {
+      @extend %h3;
+    }
+  }
+
+  &-list, &-grid {
+    @extend .list-unstyled;
+
+    display: flex;
+    margin: 0 (-1/2 * $gutter-width);
+  }
+
+  &-list {
+    flex-wrap: wrap;
+  }
+
+  &-grid {
+    flex-wrap: wrap;
+
+    &-section {
+      @include responsive(margin-bottom, 24px, (
+        $sm: 36px,
+        $lg: 48px
+      ));
+    }
+  }
+
+  &-link {
+    @extend %unstyled-link;
+
+    font-weight: 400;
+  }
+
+  &-grid & {
+    margin-bottom: $gutter-width;
+
+    @include responsive(flex-basis, 100%, (
+      $sm: 100% / 2
+    ));
+  }
+
+  &-list & {
+    margin: $gutter-width 0;
+
+    @include responsive(flex-basis, 100%, (
+      $ph: 100% / 2,
+      $sm: 100% / 3
+    ));
+  }
+
+  flex-grow: 0;
+  flex-shrink: 1;
+  padding: 0 (1/2 * $gutter-width);
+
+  &-image {
+    width: 100%;
+  }
+
+  &-title {
+    @extend %h4;
+
+    @include responsive(margin-top, 12px, (
+      $sm: 16px,
+      $md: 24px
+      // $lg: 32px
+    ));
+  }
+
+  &-note, &-excerpt {
+    margin-top: 12px;
+  }
+}

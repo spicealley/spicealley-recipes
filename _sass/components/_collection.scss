@@ -1,0 +1,32 @@
+.collection {
+  &-title {
+    @extend .page-title;
+
+    margin-bottom: 12px;
+  }
+
+  &-image {
+    margin-bottom: $gutter-width;
+  }
+
+  &-divider, &-description {
+    @include section-layout($container: false, $oneline: true);
+  }
+
+  &-divider {
+    @include section-divider;
+  }
+
+  &-grid {
+    @extend .article-grid;
+  }
+
+  &-grid .article {
+    margin-bottom: $gutter-width;
+
+    @include responsive(flex-basis, 100%, (
+      $ph: 100% / 2,
+      $md: 100% / 3
+    ));
+  }
+}
