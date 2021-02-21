@@ -8,3 +8,21 @@ layout: default
 </ul>
 
 {{ content }}
+
+<div class="article-page">
+  <div class="container">
+    breadcumbs
+
+    <div class="page-grid">
+      <div class="page-grid-main">
+        <h1 class="article-page-title">{{ page.title }}</h1>
+        <div class="article-page-subtitle">{{ page.subtitle }}</div>
+        share
+
+        <!-- {{ img | img_tag: img.alt, 'article-page-banner', '863x' }} -->
+        <div class="article-page-content rte">{{ page.content }}</div>
+      </div>
+      <div class="page-grid-side">
+    </div>
+  </div>
+</div>

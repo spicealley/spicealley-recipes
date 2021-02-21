@@ -1,0 +1,54 @@
+.search {
+  border: 1px solid $dove-gray;
+  background-color: $white;
+  color: $dove-gray;
+
+  display: flex;
+
+  input, button {
+    @extend %unstyled-input;
+  }
+
+  input {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+
+  &-result {
+    margin-top: 36px;
+
+    &-section {
+      & + & {
+        border-top: 1px solid $flamingo;
+
+        @include responsive(margin, 48px 0, (
+          $md: 96px 0
+        ));
+      }
+    }
+
+    &-title {
+      @extend %minor-link;
+      @extend %page-subtitle;
+
+      display: block;
+      margin-bottom: 12px;
+    }
+  }
+
+  &.full-width {
+    flex-basis: 90%;
+    input {
+      font-size: 16px;
+      padding: 0;
+    }
+    button {
+      padding: 6px;
+    }
+    button.button {
+      @extend %white-on-blue;
+      min-width: 100px;
+      margin: 0;
+    }
+  }
+}

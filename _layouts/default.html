@@ -1,1 +1,23 @@
-{{ content }}
+<!doctype html>
+<html lang="{{ shop.locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% comment %} TypeKit fonts {% endcomment %}
+    <link rel="stylesheet" href="https://use.typekit.net/mor2gea.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+    <title>{{ page.title }}</title>
+    <link href="{{ 'style.css' | relative_url }}" rel="stylesheet" type="text/css" media="all" />
+  </head>
+
+  <body>
+    <div class="page-area js-content-area">
+      {% include desktop-header.html %}
+      <main class="template-content" id="MainContent" role="main">
+        {{ content }}
+      </main>
+    </div>
+  </body>
+</html>

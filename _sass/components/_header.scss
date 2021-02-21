@@ -1,0 +1,141 @@
+.header {
+  &.mobile {
+    @extend .hide-sm-up;
+    $height: 32px;
+    $icon-spacing: 6px;
+
+    background-color: $spring-wood;
+    font-size: 16px;
+
+    section {
+      height: $height;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      white-space: nowrap;
+      padding: $gutter-width $gutter-width / 2;
+
+      &.searchbar {
+        justify-content: center;
+        padding: $gutter-width 0 $gutter-width * 1.5 0;
+      }
+    }
+
+    a {
+      @extend %unstyled-link;
+      display: inline-block;
+      padding: $icon-spacing $icon-spacing;
+    }
+
+    svg {
+      vertical-align: middle;
+      overflow: visible;
+    }
+  }
+
+  &.desktop {
+    @extend .hide-sm-dn;
+
+    .container {
+      @include container($width: $header-width, $gutter: $gutter-width / 2);
+    }
+
+    @include responsive(padding, 12px 0, (
+      $sm: 24px 0
+    ));
+
+    .container {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .centered-items {
+      display: flex;
+      align-items: center;
+      flex-basis: 100%;
+    }
+
+    .brand {
+      flex: 1 0 auto;
+      height: 24px;
+    }
+
+    .search {
+      flex: 0 1 100%;
+      margin: 0 24px;
+
+      button,
+      input {
+        padding: 8px;
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      button svg {
+        height: 21px;
+      }
+    }
+
+    .nav {
+      flex: 1 0 auto;
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      font-size: 18px;
+    }
+
+    .account-menu {
+      $spacing: 8px;
+
+      @extend .list-unstyled;
+
+      font-size: 16px;
+      line-height: 1;
+
+      li {
+        display: inline-block;
+
+        &:not(:first-child) {
+          padding-left: $spacing;
+          border-left: 1px solid $text-color;
+          margin-left: $spacing;
+        }
+      }
+
+      a { @extend %minor-link }
+    }
+
+    .cart-callout {
+      $spacing: 16px;
+
+      display: flex;
+      align-items: center;
+      margin-top: 18px;
+
+      .copy {
+        padding-right: $spacing;
+        border-right: 1px solid $dove-gray;
+        margin-right: $spacing;
+      }
+
+      .headline {
+        color: $flamingo;
+        font-family: $heading-font-family;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      a {
+        @extend %unstyled-link;
+
+        line-height: 1;
+      }
+
+      svg {
+        height: 27px;
+      }
+    }
+  }
+}

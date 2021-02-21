@@ -1,0 +1,11 @@
+<div class="cart-callout {% if mobile %} mobile{% endif %}">
+  <div class="copy">
+    <div class="headline">Free Shipping</div>
+    <div class="subheadline">on orders $15 or more!</div>
+  </div>
+  {%- unless mobile -%}
+    <a href="/cart">
+      {% include icon-cart.html color='#eb5630' %}
+    </a>
+  {%- endunless %}
+</div>

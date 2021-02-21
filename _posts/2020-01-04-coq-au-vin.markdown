@@ -1,6 +1,7 @@
 ---
 layout: recipe
 title:  Coq Au Vin (without pork)
+excerpt: Excerpt
 date:   2020-01-04 12:00:00 -0400
 ingredients:
   - 3 Tbsp olive oil

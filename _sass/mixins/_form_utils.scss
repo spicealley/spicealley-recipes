@@ -1,0 +1,102 @@
+@mixin placeholder {
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::placeholder {
+    @content;
+  }
+
+}
+
+@mixin input (
+  $horizontal-padding: 24px,
+  $vertical-padding: 18px,
+  $border-color: $dove-gray,
+  $color: $mine-shaft,
+  $size: inherit,
+  $has_border: true
+) {
+  appearance: none;
+  padding: $vertical-padding $horizontal-padding;
+  border-radius: 0;
+  font-size: $size;
+  font-family: inherit;
+  background-color: $white;
+  color: $color;
+
+  @if ($has_border == true) {
+    border: 1px solid $border-color;
+  } @else {
+    border: 0 none;
+  }
+}
+
+@mixin number-input (
+  $width: 108px,
+  $horizontal-padding: 24px,
+  $vertical-padding: 18px,
+  $color: $mine-shaft,
+  $size: 24px
+) {
+  @include input(
+    $horizontal-padding: $horizontal-padding,
+    $vertical-padding: $vertical-padding,
+    $color: $color,
+    $size: $size
+  );
+
+  width: $width;
+
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@mixin select-input (
+  $icon-size: 18px,
+  $horizontal-padding: 24px,
+  $vertical-padding: 18px,
+  $color: $mine-shaft,
+  $size: 24px
+) {
+  @include input(
+    $horizontal-padding: $horizontal-padding,
+    $vertical-padding: $vertical-padding,
+    $color: $color,
+    $size: $size
+  );
+
+  padding-right: 2* $horizontal-padding + $icon-size;
+  background-image: url(icon-dropdown.svg);
+  background-position: center right $horizontal-padding;
+  background-repeat: no-repeat;
+  background-size: $icon-size auto;
+
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+%unstyled-input {
+  appearance: none;
+  background-color: transparent;
+  border: 0 none;
+}

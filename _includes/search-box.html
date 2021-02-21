@@ -1,0 +1,12 @@
+<form class="search{% unless className == blank %} {{ className }}"{% endunless %}" action="/search">
+  <button type="submit">
+    <span class="visually-hidden">Search</span>
+    {% include icon-fine-mag-glass.html color='#6e6e6e' width=iconSize height=iconSize %}
+  </button>
+  <input type="search" name="q" value="{{ search.terms | escape }}" autocomplete="off" />
+  {% if className == 'full-width' %}
+    <button type="submit" class="button">
+      <span>Search</span>
+    </button>
+  {% endif %}
+</form>

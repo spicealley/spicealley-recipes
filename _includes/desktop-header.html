@@ -1,0 +1,22 @@
+<header class="desktop header">
+  <div class="container">
+    <div class="centered-items">
+      <a href="/">
+        {% include logo-type.html className='brand' color='#eb5630' %}
+      </a>
+      {% include search-box.html %}
+    </div>
+    <nav class="nav">
+      <ul class="account-menu">
+        {% if customer %}
+          <li>{{ 'My Account' | link_to: '/account' }}</li>
+          <li>{{ 'Sign out' | customer_logout_link }}</li>
+        {% else %}
+          <li>{{ 'Sign In' | customer_login_link -}}</li>
+          <li>{{ 'Register' | customer_register_link }}</li>
+        {% endif %}
+      </ul>
+      {% include cart-callout.html %}
+    </nav>
+  </div>
+</header>
